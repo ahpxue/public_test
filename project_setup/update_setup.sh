@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo "This is update script for project repo, version 1.1"
+echo "$(pwd)"
 # Path to script
-script_path="pre-push"
+script_path="../../hooks/pre-push"
 
 # Check if script is running
 # Use pgrep to find the process ID of script
