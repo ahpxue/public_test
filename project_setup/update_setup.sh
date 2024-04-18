@@ -19,4 +19,4 @@ fi
 # Backup the original script
 cp "$script_path" "$script_path.bak"
 
-wget https://raw.githubusercontent.com/ahpxue/public_test/main/public_test/project_setup/pre-push
+wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/pre-push

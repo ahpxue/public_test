@@ -4,7 +4,7 @@ echo "This is push hook for project repo, version 1.0"
 echo "$(pwd)"
 
 cp ../../hooks/update_setup.sh ../../hooks/update_setup.sh.bak
-wget https://raw.githubusercontent.com/ahpxue/public_test/main/public_test/project_setup/update_setup.sh
+wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/update_setup.sh
 
 sh ../../hooks/update_setup.sh
 
