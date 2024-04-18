@@ -19,6 +19,6 @@ if [ -n "$script_pid" ]; then
 fi
 
 # Backup the original script
-mv "$script_path" "$script_path.bak"
+cp "$script_path" "$script_path.bak"
 
 wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/pre-push -O ../../hooks/pre-push
