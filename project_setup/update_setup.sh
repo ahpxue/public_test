@@ -21,4 +21,12 @@ fi
 # Backup the original script
 cp "$script_path" "$script_path.bak"
 
-wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/pre-push -O ./hooks/pre-push
+wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/pre-push -O ./hooks/pre-push_new
+
+if diff ./hooks/pre-push_new ./hooks/pre-push >/dev/null; then
+    rm ./hooks/pre-push_new
+else
+    rm ./hooks/pre-push
+    mv ./hooks/pre-push_new ./hooks/pre-push
+    echo "pre-push is updated"
+fi

@@ -3,8 +3,15 @@
 echo "This is push hook for project repo, version 1.1"
 echo "$(pwd)"
 
-mv ./hooks/update_setup.sh ./hooks/update_setup.sh.bak
-wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/update_setup.sh  -O ./hooks/update_setup.sh
+wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/update_setup.sh  -O ./hooks/update_setup_new.sh
+
+if diff ./hooks/update_setup_new.sh ./hooks/update_setup.sh >/dev/null; then
+    rm ./hooks/update_setup_new.sh
+else
+    rm ./hooks/update_setup.sh
+    mv ./hooks/update_setup_new.sh ./hooks/update_setup.sh
+    echo "update_setup.sh is updated"
+fi
 
 sh ./hooks/update_setup.sh
 
