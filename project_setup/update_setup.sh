@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "This is update script for project repo, version 1.1"
+echo "This is update script for project repo, version 1.0"
 echo "$(pwd)"
 # Path to script
-script_path="../../hooks/pre-push"
+script_path="./hooks/pre-push"
 
 # Check if script is running
 # Use pgrep to find the process ID of script
@@ -21,4 +21,4 @@ fi
 # Backup the original script
 cp "$script_path" "$script_path.bak"
 
-wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/pre-push -O ../../hooks/pre-push
+wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/pre-push -O ./hooks/pre-push
