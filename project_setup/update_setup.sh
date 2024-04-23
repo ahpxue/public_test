@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "This is update script for project repo, version 1.0"
+echo "This is update script for project repo, version 1.1"
 echo "$(pwd)"
 
 # Path to script
