@@ -1,34 +1,9 @@
 #!/bin/bash
 
-echo "This is update script for project repo, version 1.1"
+echo "This is update script for project repo, version 1.0"
 echo "$(pwd)"
+
 # Path to script
-script_path="./hooks/pre-push"
+script_path="./.github/workflows/pull_request_checks.yml"
 
-# Check if script is running
-# Use pgrep to find the process ID of script
-script_pid=$(pgrep -f "$script_path")
-
-# If script is running, terminate it gracefully
-if [ -n "$script_pid" ]; then
-    # Send SIGTERM to terminate script
-    kill "$script_pid"
-
-    # Wait for script to terminate
-    sleep 2
-fi
-
-wget https://raw.githubusercontent.com/ahpxue/public_test/main/project_setup/pre-push -O ./hooks/pre-push_new
-
-if diff ./hooks/pre-push_new ./hooks/pre-push >/dev/null; then
-    rm ./hooks/pre-push_new
-else
-    rm ./hooks/pre-push
-    mv ./hooks/pre-push_new ./hooks/pre-push
-    echo "pre-push is updated"
-    git add ./hooks/pre-push
-    git commit -m "Automatic commit: updating ./hooks/pre-push"
-    exit 1
-fi
-
-exit 0
+exit 1
