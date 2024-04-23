@@ -10,7 +10,10 @@ if diff ./hooks/update_setup_new.sh ./hooks/update_setup.sh >/dev/null; then
 else
     rm ./hooks/update_setup.sh
     mv ./hooks/update_setup_new.sh ./hooks/update_setup.sh
-    echo "update_setup.sh is updated"
+    echo "update_setup.sh is updated. Please push again"
+    git add ./hooks/update_setup.sh
+    git commit -m "Automatic commit: updating ./hooks/update_setup.sh"
+    exit 1
 fi
 
 sh ./hooks/update_setup.sh
